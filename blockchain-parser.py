@@ -30,9 +30,9 @@ def reverse(input):
             T = ''
         return (Res);
 
-dirA = 'd:/_blocks/' 
+dirA = 'd:/_blocks/' # Directory where blk*.dat files are stored
 #dirA = sys.argv[1]
-dirB = 'd:/_hash/'
+dirB = 'd:/_hash/' # Directory where to save parsing results
 #dirA = sys.argv[2]
 
 fList = os.listdir(dirA)
