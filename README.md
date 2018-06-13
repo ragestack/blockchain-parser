@@ -1,4 +1,4 @@
-#Blockchain parser
+#Blockchain-parser
 
 Simple script for parsing Bitcoin and altcoins blockchain.
 
