@@ -1,6 +1,8 @@
 Blockchain parser
 =================
 
+Author: <466611@gmail.com>
+
 Simple script for parsing Bitcoin and altcoins blockchain.
 
 No dependencies. Just install Python 2.7 standart release and run.
