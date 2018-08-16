@@ -1,7 +1,8 @@
-'''
-Blockchain parser
-Copyright (c) 2015-2018 Denis Leonov <466611@gmail.com>
-'''
+# -*- coding: utf-8 -*-
+#
+# Blockchain parser
+# Copyright (c) 2015-2018 Denis Leonov <466611@gmail.com>
+#
 
 import os
 import datetime
@@ -43,6 +44,7 @@ dirB = 'd:/_hash/' # Directory where to save parsing results
 #dirA = sys.argv[2]
 
 fList = os.listdir(dirA)
+fList = filter(lambda x: (x.endswith('.dat') and x.startswith('blk')),fList)
 fList.sort()
 
 for i in fList:
@@ -161,6 +163,7 @@ for i in fList:
                 c = 0
                 c = f.read(1)
                 bInt = int(c.encode('hex'),16)
+                tmpB = c.encode('hex').upper()
                 Witness = True
                 resList.append('Witness activated >>')
             c = 0
