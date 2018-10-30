@@ -19,7 +19,7 @@ def HexToInt(s):
     
 def reverse(input):
     L = len(input)
-    if (L % 2) <> 0:
+    if (L % 2) != 0:
         return None
     else:
         Res = ''
@@ -44,7 +44,7 @@ dirB = 'd:/_hash/' # Directory where to save parsing results
 #dirA = sys.argv[2]
 
 fList = os.listdir(dirA)
-fList = filter(lambda x: (x.endswith('.dat') and x.startswith('blk')),fList)
+fList = [x for x in fList if (x.endswith('.dat') and x.startswith('blk'))]
 fList.sort()
 
 for i in fList:
@@ -54,7 +54,7 @@ for i in fList:
     a = 0
     t = dirA + nameSrc
     resList.append('Start ' + t + ' in ' + str(datetime.datetime.now()))
-    print 'Start ' + t + ' in ' + str(datetime.datetime.now())
+    print ('Start ' + t + ' in ' + str(datetime.datetime.now()))
     f = open(t,'rb')
     tmpHex = ''
     fSize = os.path.getsize(t)
@@ -350,8 +350,8 @@ for i in fList:
         a += 1
         tx_hashes = [h.decode('hex') for h in tx_hashes]
         tmpHex = merkle_root(tx_hashes).encode('hex').upper()
-        if tmpHex <> MerkleRoot:
-            print 'Merkle roots does not match! >',MerkleRoot,tmpHex
+        if tmpHex != MerkleRoot:
+            print ('Merkle roots does not match! >',MerkleRoot,tmpHex)
         tmpHex = ''
     f.close()
     f = open(dirB + nameRes,'w')
