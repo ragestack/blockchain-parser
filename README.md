@@ -5,7 +5,7 @@ Author: <466611@gmail.com>
 
 Simple script for parsing Bitcoin and altcoins blockchain.
 
-No dependencies. Just install Python 2.7 standart release and run.
+No dependencies. Just install Python standart release and run.
 
 The hash calculation of the blocks and transactions for altcoins is different from bitcoin, so these calculations will be added in the near future. May be.
 
