@@ -3,16 +3,14 @@ Blockchain parser
 
 Author: <466611@gmail.com>
 
-Simple script for parsing Bitcoin and altcoins blockchain.
+Simple script for parsing blk*.dat files of Bitcoin blockchain database.
 
 No dependencies. Just install Python standart release and run.
 
-The hash calculation of the blocks and transactions for altcoins is different from bitcoin, so these calculations will be added in the near future. May be.
-
-Also soon can be added blockchain verifier script.
+Make sure you change the paths for blk*.dat files and results to yours.
 
 This code written for author's educational purposes, so there is no goals to the fast parsing time. But this code can make you better understand what is blockchain.
 
-Donations can clarify the growth of this code with zero or positive increment, or vice versa :)
+If this was helpfull for you, don't hesistate to make some donations.
 
 Bitcoin: 1BWJhysYL5R8XKBWhTW8mHaGSJ3V45LcvJ
