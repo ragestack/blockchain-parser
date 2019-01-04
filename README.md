@@ -13,4 +13,4 @@ This code written for educational purposes, so there is no goals to the fast par
 
 If this was helpfull for you, don't hesistate to make some donations.
 
-Bitcoin: 1BWJhysYL5R8XKBWhTW8mHaGSJ3V45LcvJ
+Bitcoin: 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
