@@ -11,6 +11,9 @@ Make sure you change the paths for **blkXXXXX.dat** files and results to yours.
 
 This code written for educational purposes, so there is no goals to the fast parsing time. But this code can make you better understand what is blockchain.
 
-If this was helpfull for you, don't hesistate to make some donations.
+**If this was helpfull for you, don't hesistate to make a donations!!!**
+
+<noscript><a href="https://liberapay.com/ragestack/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
 Bitcoin: 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
+
