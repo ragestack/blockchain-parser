@@ -15,5 +15,5 @@ This code written for educational purposes, so there is no goals to the fast par
 
 <noscript><a href="https://liberapay.com/ragestack/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
-or Bitcoin: 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
+or Bitcoin (BTC): 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
 
