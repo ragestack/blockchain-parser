@@ -49,7 +49,7 @@ fList.sort()
 
 for i in fList:
     nameSrc = i
-    nameRes = nameSrc.replace('.dat','.hash')
+    nameRes = nameSrc.replace('.dat','.txt')
     resList = []
     a = 0
     t = dirA + nameSrc
