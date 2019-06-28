@@ -13,5 +13,5 @@ Make sure you change the paths for **blkXXXXX.dat** files and results to yours.
 
 <noscript><a href="https://liberapay.com/ragestack/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
-or Bitcoin (BTC): <a href="https://www.blockchain.com/btc/address/1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL">1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL</a>
+or Bitcoin (BTC): 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
 
