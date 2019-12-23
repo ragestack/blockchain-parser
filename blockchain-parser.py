@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Blockchain parser
-# Copyright (c) 2015-2019 Denis Leonov. Email: <466611@gmail.com>; WhatsApp, Viber: +79196777767
+# Copyright (c) 2015-2019 Denis Leonov <466611@gmail.com>
 #
 
 import os
