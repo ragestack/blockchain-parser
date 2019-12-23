@@ -1,7 +1,7 @@
 Blockchain parser
 =================
 
-**Author:** Denis Leonov (Email: <466611@gmail.com>; WhatsApp, Viber: +79196777767)
+**Author:** Denis Leonov <466611@gmail.com>
 
 Simple script for parsing **blkXXXXX.dat** files of Bitcoin blockchain database.
 
