@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Blockchain parser
-# Copyright (c) 2015-2019 Denis Leonov <466611@gmail.com>
+# Copyright (c) 2015-2020 Denis Leonov <466611@gmail.com>
 #
 
 import os
