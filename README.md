@@ -11,7 +11,7 @@ This script also compatible with most of altcoins, after making some tiny tricks
 
 Don't worry to email me your questions or suggestions about this parser.
 
-No dependencies, no third-parties modules or libs needed. Just install Python 3.6 or 2.7 standart release and run.
+No dependencies, no third-parties modules or libs needed. Just install Python standart release and run.
 
 Make sure you change the paths for **blkXXXXX.dat** files and for the parsing results to yours. The script works only with fully downloaded blockchain **dat** files (that are ~134Mb).
 
