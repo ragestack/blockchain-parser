@@ -340,9 +340,8 @@ for i in fList:
                             b = f.read(1)
                             b = b.hex().upper()
                             tmpHex = b + tmpHex
-                        resList.append(
-                            'Witness ' + str(m) + ' ' + str(j) + ' ' + str(
-                                WitnessItemLength) + ' ' + tmpHex)
+                        resList.append(f'Witness {str(m)} {str(j)} '
+                                       f'{str(WitnessItemLength)} {tmpHex}')
                         tmpHex = ''
             Witness = False
             for j in range(4):
