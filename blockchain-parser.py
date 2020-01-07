@@ -350,10 +350,3 @@ for i in fList:
     for j in resList:
         f.write(j + '\n')
     f.close()
-nameSrc = ''
-nameRes = ''
-dirA= ''
-dirB = ''
-tmpC = ''
-resList = []
-fList = []
