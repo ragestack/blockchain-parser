@@ -8,14 +8,6 @@ import os
 import datetime
 import hashlib
 
-def HexToInt(s):
-    t = ''
-    if s == '':
-        r = 0
-    else:
-        t = '0x' + s
-        r = int(t,16)
-    return r
     
 def reverse(input):
     L = len(input)
