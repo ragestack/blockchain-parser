@@ -34,6 +34,8 @@ dirA = './_blocks/' # Directory where blk*.dat files are stored
 #dirA = sys.argv[1]
 dirB = './_result/' # Directory where to save parsing results
 #dirA = sys.argv[2]
+if not os.path.isdir(dirB):
+    os.makedirs(dirB)
 
 fList = os.listdir(dirA)
 fList = [x for x in fList if (x.endswith('.dat') and x.startswith('blk'))]
