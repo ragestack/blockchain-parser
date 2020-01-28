@@ -24,7 +24,7 @@ Bitcoin (BTC): 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
 
 ```
 Во время золотой лихорадки не предлагай им слитки.
-Займись тем, чтобы найти подходящее спросу решето.
+Займись тем, чтобы найти решето подходящее спросу.
 ```
 ```
 Do not offer 'em bullion during the gold rush.
