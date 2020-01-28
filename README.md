@@ -21,3 +21,14 @@ This script convert the full blockchain raw database that is stored in **blkXXXX
 
 Bitcoin (BTC): 1FvssyzXNnmgHbJg2DYwb7rkzTrtT8adcL
 
+
+
+
+
+**RU**
+Во время золотой лихорадки не предлагай им слитки.
+Займись тем, чтобы найти подходящее спросу решето.
+
+**EN**
+Do not offer 'em bullion during the gold rush.
+Take care to find a sieve suitable for demand.
