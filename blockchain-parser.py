@@ -48,7 +48,7 @@ def read_varint(file):
     if bInt == 254: c = 5
     if bInt == 255: c = 9
     for j in range(1,c):
-        b = f.read(1)
+        b = file.read(1)
         b = b.hex().upper()
         data = b + data
     return data
