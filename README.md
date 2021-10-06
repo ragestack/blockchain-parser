@@ -15,7 +15,7 @@ Don't worry to email me your questions or suggestions about this parser.
 
 No dependencies, no third-parties modules or libs needed. Just install Python standart release and run.
 
-Make sure you change the paths for **blkXXXXX.dat** files and for the parsing results to yours. The script works only with fully downloaded blockchain **dat** files (that are ~134Mb).
+Make sure you change the paths for **blkXXXXX.dat** files and for the parsing results to yours.
 
 This script convert the full blockchain raw database that is stored in **blkXXXXX.dat** files to the simple **txt** view.
 
