@@ -53,9 +53,9 @@ def read_varint(file):
         data = b + data
     return data
 
-dirA = 'e:/_blocks/' # Directory where blk*.dat files are stored
+dirA = './blocks/' # Directory where blk*.dat files are stored
 #dirA = sys.argv[1]
-dirB = 'e:/_result/' # Directory where to save parsing results
+dirB = './result/' # Directory where to save parsing results
 #dirA = sys.argv[2]
 
 fList = os.listdir(dirA)
