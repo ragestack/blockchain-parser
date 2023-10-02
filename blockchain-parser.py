@@ -7,6 +7,7 @@
 import os
 import datetime
 import hashlib
+import sys
 
 def reverse(input):
     L = len(input)
@@ -53,8 +54,8 @@ def read_varint(file):
         data = b + data
     return data
 
-dirA = './blocks/' # Directory where blk*.dat files are stored
-#dirA = sys.argv[1]
+#dirA = './blocks/' # Directory where blk*.dat files are stored
+dirA = sys.argv[1]
 dirB = './result/' # Directory where to save parsing results
 #dirA = sys.argv[2]
 
@@ -65,7 +66,13 @@ fList.sort()
 for i in fList:
     nameSrc = i
     nameRes = nameSrc.replace('.dat','.txt')
+    nameRes3 = nameSrc.replace('.dat','_s.csv')
     resList = []
+    resList3 = []
+    amount = 0
+    sType = ''
+    timestamp = 0
+    nSequence = 0
     a = 0
     t = dirA + nameSrc
     resList.append('Start ' + t + ' in ' + str(datetime.datetime.now()))
@@ -86,6 +93,7 @@ for i in fList:
         tmpHex = tmpHex[::-1]        
         tmpHex = tmpHex.hex().upper()
         resList.append('SHA256 hash of the current block hash = ' + tmpHex)
+        #blockHash = tmpHex
         f.seek(tmpPos3,0)
         tmpHex = read_bytes(f,4)
         resList.append('Version number = ' + tmpHex)
@@ -95,6 +103,7 @@ for i in fList:
         resList.append('MerkleRoot hash = ' + tmpHex)
         MerkleRoot = tmpHex
         tmpHex = read_bytes(f,4)
+        timestamp = int(tmpHex, 16)
         resList.append('Time stamp = ' + tmpHex)
         tmpHex = read_bytes(f,4)
         resList.append('Difficulty = ' + tmpHex)
@@ -106,6 +115,7 @@ for i in fList:
         resList.append('')
         tmpHex = ''; RawTX = ''; tx_hashes = []
         for k in range(txCount):
+            isContract = False
             tmpHex = read_bytes(f,4)
             resList.append('TX version number = ' + tmpHex)
             RawTX = reverse(tmpHex)
@@ -169,6 +179,7 @@ for i in fList:
                 RawTX = RawTX + tmpHex
                 tmpHex = read_bytes(f,4,'B')
                 resList.append('Sequence number = ' + tmpHex)
+                nSequence = tmpHex
                 RawTX = RawTX + tmpHex
                 tmpHex = ''
             b = f.read(1)
@@ -225,7 +236,29 @@ for i in fList:
                     for j in range(WitnessLength):
                         tmpHex = read_varint(f)
                         WitnessItemLength = int(tmpHex,16)
-                        tmpHex = read_bytes(f,WitnessItemLength)
+                        tmpHex = read_bytes(f,WitnessItemLength, 'B')
+                        if j == WitnessLength - 1:
+                            if tmpHex.startswith('82012087'): # ReverseSwap (Swap-out)
+                                # If nSequence is 0xffffffff LOOPv1
+                                # If nSequence is 0xfffffffd Boltz
+                                # TODO: If witness has an empty it is makred as refund
+                                isContract = True
+                                amount = int(Value, 16)
+                                if nSequence == 'FFFFFFFF':
+                                    sType = 'LOOPv1'
+                                elif nSequence == 'FDFFFFFF':
+                                    sType = 'Boltz-swap-out'
+                                else:
+                                    sType = 'Unknown-swap'
+                                    print(nSequence)
+                            elif tmpHex.startswith('A914'): # NormalSwap (Swap-in)
+                                isContract = True
+                                amount = int(Value, 16)
+                                sType = 'Boltz-swap-in'
+                            elif tmpHex.endswith('8851B268'): # LOOP v2
+                                isContract = True
+                                amount = int(Value, 16)
+                                sType = 'LOOPv2'
                         resList.append('Witness ' + str(m) + ' ' + str(j) + ' ' + str(WitnessItemLength) + ' ' + tmpHex)
                         tmpHex = ''
             Witness = False
@@ -239,6 +272,8 @@ for i in fList:
             tmpHex = tmpHex[::-1]
             tmpHex = tmpHex.hex().upper()
             resList.append('TX hash = ' + tmpHex)
+            if isContract:
+                resList3.append([sType,tmpHex,str(amount),str(timestamp)])
             tx_hashes.append(tmpHex)
             resList.append(''); tmpHex = ''; RawTX = ''
         a += 1
@@ -247,7 +282,14 @@ for i in fList:
         if tmpHex != MerkleRoot:
             print ('Merkle roots does not match! >',MerkleRoot,tmpHex)
     f.close()
-    f = open(dirB + nameRes,'w')
-    for j in resList:
-        f.write(j + '\n')
-    f.close()
+    #f = open(dirB + nameRes,'w')
+    #for j in resList:
+    #    f.write(j + '\n')
+    #f.close()
+
+    import csv
+    f3 = open(dirB + nameRes3,'w')
+    write = csv.writer(f3)
+    header = ["type", "txid","amount","timestamp"]
+    write.writerow(header)
+    write.writerows(resList3)
