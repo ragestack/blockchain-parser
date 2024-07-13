@@ -74,8 +74,9 @@ for i in fList:
     tmpHex = ''
     fSize = os.path.getsize(t)
     while f.tell() != fSize:
-        tmpHex = read_bytes(f,4)
-        resList.append('Magic number = ' + tmpHex)
+        while tmpHex != 'D9B4BEF9': # it is for to skip zeroes in some blk files
+            tmpHex = read_bytes(f,4)
+            resList.append('Magic number = ' + tmpHex)
         tmpHex = read_bytes(f,4)
         resList.append('Block size = ' + tmpHex)
         tmpPos3 = f.tell()
