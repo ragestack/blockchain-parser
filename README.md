@@ -1,6 +1,6 @@
 Blockchain parser
-=================
-Russian Scalpel | Русский Скальпель
+Russian Scalpel
+Русский Скальпель
 =
 **Author:** Denis Leonov <466611@gmail.com>
 
