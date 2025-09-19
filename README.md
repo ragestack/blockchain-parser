@@ -1,9 +1,7 @@
-Blockchain parser
-=
-Russian scalpel
-=
-Русский скальпель
-=
+#Blockchain parser
+
+##Russian scalpel | Русский скальпель
+
 **Author:** Denis Leonov <466611@gmail.com>
 
 Simple script for parsing **blkXXXXX.dat** files of Bitcoin blockchain database.
