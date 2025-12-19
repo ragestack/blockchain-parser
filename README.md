@@ -1,3 +1,5 @@
+[![PyPI version](https://img.shields.io/pypi/v/blockchain-scalpel.svg)](https://pypi.org/project/blockchain-scalpel/)
+
 # Blockchain Scalpel
 (formerly: Blockchain parser / Russian scalpel)
 
@@ -33,6 +35,42 @@ A standard Python installation is sufficient.
 
 ---
 
+## Installation
+
+### Install from PyPI
+
+```bash
+pip install blockchain-scalpel
+```
+This will install the **blockchain-scalpel** command-line tool.
+
+### Manual usage
+```bash
+python blockchain-parser.py <blocks_dir> <result_dir>
+```
+
+---
+
+## Usage
+
+After installation from PyPI:
+```bash
+blockchain-scalpel <blocks_dir> <result_dir>
+```
+
+This is equivalent to:
+```bash
+python blockchain-parser.py <blocks_dir> <result_dir>
+```
+
+Where:
+
+- <blocks_dir> is the directory containing blkXXXXX.dat files
+
+- <result_dir> is the directory for parsed output
+
+---
+
 ## Typical Usage
 
 - academic and scientific research
@@ -53,6 +91,9 @@ Make sure to configure the paths for:
 
 Repository:  
 https://github.com/ragestack/blockchain-parser
+
+PyPI package:
+https://pypi.org/project/blockchain-scalpel/
 
 ---
 
