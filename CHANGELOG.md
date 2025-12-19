@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.1
+- Added PyPI packaging and CLI entrypoint: `blockchain-scalpel`
+
 ## 2.0.0
 
 ### Licensing
