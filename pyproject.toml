@@ -21,3 +21,6 @@ Homepage = "https://github.com/ragestack/blockchain-parser"
 
 [project.scripts]
 blockchain-scalpel = "blockchain_scalpel.cli:main"
+
+[tool.setuptools]
+packages = ["blockchain_scalpel"]
