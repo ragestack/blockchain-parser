@@ -1,27 +1,27 @@
 import runpy
 import sys
-from pathlib import Path
+from importlib import resources
 
 
 def main() -> None:
     """
     CLI entrypoint for the PyPI package 'blockchain-scalpel'.
 
-    Executes 'blockchain-parser.py' as if the user ran:
+    Executes the bundled 'blockchain-parser.py' script as if the user ran:
         python blockchain-parser.py <args...>
-
-    Keeps sys.argv intact (arguments are passed through).
     """
-    repo_root = Path(__file__).resolve().parent.parent
-    target = repo_root / "blockchain-parser.py"
-
-    if not target.exists():
-        print("Error: 'blockchain-parser.py' was not found next to the package.", file=sys.stderr)
+    try:
+        script = resources.files("blockchain_scalpel").joinpath("blockchain-parser.py")
+    except Exception:
+        print("Error: cannot locate bundled 'blockchain-parser.py'.", file=sys.stderr)
         raise SystemExit(2)
 
-    # Make usage/help messages look natural.
-    # After this, script sees argv like: ["blockchain-parser.py", "./blocks", "./result"]
-    if len(sys.argv) > 0:
-        sys.argv[0] = str(target)
+    if not script.is_file():
+        print("Error: bundled 'blockchain-parser.py' not found.", file=sys.stderr)
+        raise SystemExit(2)
 
-    runpy.run_path(str(target), run_name="__main__")
+    # Make argv[0] look like the original script name
+    if len(sys.argv) > 0:
+        sys.argv[0] = "blockchain-parser.py"
+
+    runpy.run_path(str(script), run_name="__main__")

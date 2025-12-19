@@ -4,16 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "blockchain-scalpel"
-version = "2.0.1"
+version = "2.0.3"
 description = "Blockchain parser (source-available). Free for non-commercial use with attribution. Commercial & SaaS licenses available."
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "Denis Leonov" }]
-license = { file = "LICENSE" }
+
+license = "LicenseRef-Blockchain-Scalpel"
+license-files = ["LICENSE"]
 
 classifiers = [
   "Programming Language :: Python :: 3",
-  "License :: Other/Proprietary",
 ]
 
 [project.urls]
@@ -21,3 +22,7 @@ Homepage = "https://github.com/ragestack/blockchain-parser"
 
 [project.scripts]
 blockchain-scalpel = "blockchain_scalpel.cli:main"
+
+[tool.setuptools]
+packages = ["blockchain_scalpel"]
+include-package-data = true

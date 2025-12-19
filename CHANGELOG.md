@@ -1,6 +1,9 @@
 # Changelog
 
-## 2.0.1
+## 2.0.3
+- Fixed PyPI package: bundle `blockchain-parser.py` so the `blockchain-scalpel` CLI works after installation.
+
+## 2.0.2
 - Added PyPI packaging and CLI entrypoint: `blockchain-scalpel`
 
 ## 2.0.0
